@@ -163,7 +163,7 @@ type UnifiedAlertingSettings struct {
 	// Applied only during contact point configuration (Create/Update), not at notification send time.
 	LimitEmailToOrgMembers bool
 
-	// ExternalAlertmanagerUID is the operator-level override for the Mimir/Cortex Alertmanager
+	// ExternalAlertmanagerUID is the operator-level override for the External Alertmanager
 	// datasource UID to sync into Grafana. When non-empty, it applies to all orgs and
 	// overrides any per-org value stored in the database.
 	// Configured via the [unified_alerting] ini key "external_alertmanager_uid" or the
