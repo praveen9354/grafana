@@ -127,6 +127,8 @@ func (srv ConfigSrv) RoutePostNGalertConfig(c *contextmodel.ReqContext, body api
 			if ds.Type != datasources.DS_ALERTMANAGER {
 				return response.Error(http.StatusBadRequest, "datasource must be of type alertmanager", nil)
 			}
+			// The /api/v1/alerts config-fetch endpoint used by the sync worker is the
+			// Mimir/Cortex admin API; vanilla Prometheus Alertmanager does not expose it.
 			impl := ds.JsonData.Get("implementation").MustString("")
 			if impl != "mimir" && impl != "cortex" {
 				return response.Error(http.StatusBadRequest, "datasource implementation must be mimir or cortex", nil)
