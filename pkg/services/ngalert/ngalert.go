@@ -298,6 +298,7 @@ func (ng *AlertNG) init() error {
 		notificationHistorian,
 		ng.store,
 		ng.DataSourceService,
+		ng.httpClientProvider,
 		opts...,
 	)
 	if err != nil {

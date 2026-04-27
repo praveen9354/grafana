@@ -397,6 +397,7 @@ func setupMam(t *testing.T, cfg *setting.Cfg) *MultiOrgAlertmanager {
 		nil,
 		nil, // adminConfigStore - not needed in this test
 		nil, // datasourceService - not needed in this test
+		nil, // httpClientProvider - not needed in this test
 	)
 	require.NoError(t, err)
 	return mam
